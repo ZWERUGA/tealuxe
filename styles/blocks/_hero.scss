@@ -1,0 +1,63 @@
+@use "../helpers" as *;
+
+.hero {
+  position: relative;
+  min-height: rem(500);
+  display: flex;
+  align-items: end;
+  color: var(--color-light);
+  background: url("../../images/hero/hero-bg.jpg") left/cover no-repeat;
+
+  @include mobile {
+    min-height: fluid(500, 367, 479, 359);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 40.1%, #000 100%);
+  }
+
+  * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__body {
+    display: grid;
+    row-gap: rem(20);
+    width: 100%;
+
+    @include mobile {
+      padding-inline: rem(10);
+      row-gap: fluid(20, 10, 479, 359);
+    }
+  }
+
+  &__title {
+    max-width: rem(790);
+    line-height: 1;
+
+    @include tablet {
+      font-size: fluid(60, 40, 767, 479);
+    }
+
+    @include mobile {
+      font-size: fluid(40, 24, 479, 359);
+    }
+  }
+
+  &__description {
+    margin-bottom: rem(48);
+    max-width: rem(558);
+    line-height: 1.21;
+    font-family: var(--font-family-accent);
+    font-size: rem(24);
+
+    @include mobile {
+      font-size: fluid(24, 14, 479, 359);
+      margin-bottom: fluid(48, 30, 479, 359);
+    }
+  }
+}
