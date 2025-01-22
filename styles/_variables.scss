@@ -1,0 +1,17 @@
+:root {
+  --color-dark: #151618;
+  --color-brown: #754e29;
+  --color-light: #ffffff;
+  --color-green-light: #b8b58b;
+  --color-bg-light: #f7f2ea;
+
+  --border: 1px solid var(--color-dark);
+
+  --font-family-base: "Open Sans", sans-serif;
+  --font-family-accent: "Cormorant", sans-serif;
+
+  --container-width: 1200px;
+  --container-padding-x: 0;
+
+  --transition-duration: 0.2s;
+}
