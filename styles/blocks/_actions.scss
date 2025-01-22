@@ -1,0 +1,22 @@
+@use "../helpers" as *;
+
+.actions {
+  display: flex;
+  align-items: center;
+
+  &-list {
+    display: flex;
+    align-items: center;
+    column-gap: rem(20);
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:last-child {
+      margin-left: var(--lastActionMarginLeft);
+    }
+  }
+}
