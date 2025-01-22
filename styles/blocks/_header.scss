@@ -1,23 +1,47 @@
 @use "../helpers" as *;
 
 .header {
-  padding-top: rem(30);
-  padding-bottom: rem(28);
+  padding-block: rem(30);
+
+  @include tablet {
+    padding-block: fluid(30, 10, 767, 479);
+  }
 
   &__inner {
     min-height: rem(142);
     display: flex;
-    justify-content: space-between;
+
+    @include laptop {
+      min-height: rem(105);
+    }
+
+    @include tablet {
+      align-items: center;
+      padding-inline: fluid(64, 10, 767, 479);
+      min-height: fluid(105, 56, 767, 479);
+    }
+
+    @include mobile {
+      min-height: rem(56);
+      padding-inline: rem(10);
+    }
   }
 
   &__menu {
     display: flex;
     align-items: center;
+    margin-left: fluid(222, 59, 1200, 999);
+    margin-right: auto;
+    font-size: rem(18);
 
     &-list {
       display: flex;
       align-items: center;
       column-gap: rem(70);
+
+      @include laptop {
+        column-gap: fluid(70, 30, 999, 767);
+      }
     }
 
     &-link {
@@ -29,5 +53,13 @@
 
   &__actions {
     --lastActionMarginLeft: #{rem(80)};
+
+    @include laptop {
+      --lastActionMarginLeft: #{rem(30)};
+    }
+
+    @include tablet {
+      --lastActionMarginLeft: #{fluid(30, 0, 767, 359)};
+    }
   }
 }

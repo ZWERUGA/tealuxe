@@ -2,4 +2,22 @@
 
 .logo {
   align-self: start;
+  flex-shrink: 0;
+
+  @include tablet {
+    align-self: center;
+    margin-left: fluid(243, 171, 767, 479);
+    margin-right: auto;
+  }
+
+  @include mobile {
+    margin-left: fluid(171, 111, 479, 359);
+  }
+
+  &__img {
+    @include tablet {
+      width: fluid(73, 39, 767, 479);
+      height: fluid(105, 56, 767, 479);
+    }
+  }
 }
