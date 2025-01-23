@@ -1,0 +1,43 @@
+@use "../helpers" as *;
+
+.reviews {
+  padding-block: rem(60);
+  background-color: var(--color-bg-light);
+
+  @include tablet {
+    padding-block: fluid(60, 50, 767, 479);
+  }
+
+  &__inner {
+    @include laptop {
+      padding-inline: rem(54);
+    }
+
+    @include tablet {
+      padding-inline: fluid(65, 10, 767, 479);
+    }
+  }
+
+  &__list {
+    margin-top: rem(60);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: rem(26);
+    row-gap: rem(30);
+
+    @include mobile-above {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tablet-above {
+      margin-top: fluid(60, 50, 767, 479);
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include mobile {
+      margin-top: fluid(50, 30, 479, 359);
+    }
+  }
+}
