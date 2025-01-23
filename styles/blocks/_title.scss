@@ -1,0 +1,11 @@
+@use "../helpers" as *;
+
+.title {
+  line-height: 1.2;
+  font-size: rem(40);
+  text-align: center;
+
+  @include mobile {
+    font-size: fluid(40, 24, 479, 359);
+  }
+}

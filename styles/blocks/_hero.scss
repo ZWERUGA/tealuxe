@@ -24,7 +24,7 @@
     z-index: 1;
   }
 
-  &__body {
+  &__inner {
     display: grid;
     row-gap: rem(20);
     width: 100%;
@@ -58,6 +58,11 @@
     @include mobile {
       font-size: fluid(24, 14, 479, 359);
       margin-bottom: fluid(48, 30, 479, 359);
+    }
+
+    @include mobile-s {
+      font-family: var(--font-family-base);
+      font-weight: 300;
     }
   }
 }

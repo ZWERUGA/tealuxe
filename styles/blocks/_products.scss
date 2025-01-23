@@ -1,0 +1,70 @@
+@use "../helpers" as *;
+
+.products {
+  padding-block: fluid(150, 120, 1200, 999);
+
+  @include mobile {
+    padding-inline: fluid(20, 10, 479, 359);
+  }
+
+  @include tablet {
+    padding-block: fluid(120, 60, 999, 479);
+  }
+
+  @include mobile-s {
+    padding-top: rem(70);
+    padding-bottom: rem(80);
+  }
+
+  &__quote {
+    margin-inline: auto;
+    line-height: 1.2;
+    max-width: rem(704);
+    font-family: var(--font-family-accent);
+    font-size: rem(40);
+    text-align: center;
+    font-weight: 300;
+    font-style: italic;
+
+    @include tablet {
+      font-size: fluid(40, 16, 767, 479);
+    }
+
+    @include mobile {
+      font-family: var(--font-family-base);
+    }
+  }
+
+  &__title {
+    margin-top: fluid(150, 120, 1200, 999);
+
+    @include tablet {
+      margin-top: fluid(120, 60, 767, 479);
+    }
+
+    @include mobile-s {
+      margin-top: rem(80);
+    }
+  }
+
+  &__list {
+    margin-top: fluid(60, 30, 1200, 999);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__img {
+    width: fluid(208, 190, 1200, 999);
+    height: auto;
+
+    @include mobile {
+      width: fluid(190, 169, 479, 359);
+    }
+  }
+
+  &__name {
+    margin-top: rem(10);
+    text-align: center;
+  }
+}
