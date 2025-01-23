@@ -1,0 +1,15 @@
+@use "../helpers" as *;
+
+.button {
+  @include reset-button;
+  padding-block: rem(12);
+  padding-inline: rem(41);
+  border: var(--border);
+  font-size: rem(20);
+  font-weight: 300;
+
+  @include hover {
+    color: var(--color-light);
+    background-color: var(--color-green-light);
+  }
+}

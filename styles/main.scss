@@ -13,3 +13,11 @@
 @use "./blocks/products";
 @use "./blocks/reviews";
 @use "./blocks/review-card";
+@use "./blocks/blog";
+@use "./blocks/blog-card";
+@use "./blocks/button";
+
+// header,
+// main > *:not(:last-child) {
+//   display: none !important;
+// }

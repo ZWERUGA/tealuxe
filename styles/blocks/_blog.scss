@@ -1,0 +1,59 @@
+@use "../helpers" as *;
+
+.blog {
+  padding-block: fluid(150, 120, 1200, 999);
+
+  @include tablet {
+    padding-block: fluid(120, 60, 767, 479);
+    padding-inline: fluid(64, 10, 767, 479);
+  }
+
+  @include mobile {
+    padding-block: fluid(60, 50, 479, 359);
+  }
+
+  @include mobile-s {
+    padding-inline: rem(45);
+  }
+
+  &__list {
+    margin-top: rem(60);
+    display: grid;
+    row-gap: rem(30);
+    justify-content: center;
+
+    @include laptop-above {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: fluid(50, 20, 1200, 999);
+      row-gap: fluid(40, 30, 1200, 999);
+    }
+
+    @include mobile {
+      margin-top: fluid(60, 30, 479, 359);
+    }
+  }
+
+  &__item {
+    @include mobile-above {
+      &:nth-child(even) {
+        margin-left: fluid(98, 0, 767, 479);
+      }
+    }
+
+    @include tablet-above {
+      &:nth-child(even) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: rem(30);
+    margin-inline: auto;
+    display: flex;
+
+    @include mobile-above {
+      margin-top: rem(60);
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@use "../helpers" as *;
+
+.blog-card {
+  --transformImageScale: 1;
+  --brightnessImageValue: 1;
+  --translateXArrow: 0;
+
+  @include hover {
+    --transformImageScale: 1.1;
+    --brightnessImageValue: 0.7;
+    --translateXArrow: #{rem(5)};
+  }
+
+  &__link {
+    display: grid;
+    column-gap: rem(20);
+
+    @include mobile-above {
+      grid-template-columns: rem(270) auto;
+    }
+
+    @include tablet-above {
+      grid-template-columns: rem(230) auto;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  &__img-inner {
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    transition: all var(--transition-duration) linear;
+    transform: scale(var(--transformImageScale));
+    filter: brightness(var(--brightnessImageValue));
+    object-fit: cover;
+  }
+
+  &__title {
+    margin-top: rem(10);
+    font-size: rem(24);
+
+    @include mobile-above {
+      margin-top: rem(0);
+    }
+  }
+
+  &__author {
+    margin-top: rem(5);
+    font-size: rem(14);
+    font-weight: 300;
+
+    @include mobile-above {
+      margin-top: rem(10);
+    }
+  }
+
+  &__read {
+    margin-top: rem(10);
+    display: flex;
+    align-items: center;
+    column-gap: rem(8);
+    font-size: rem(14);
+
+    @include mobile-above {
+      margin-top: auto;
+    }
+
+    svg {
+      transition: transform var(--transition-duration) linear;
+      transform: translateX(var(--translateXArrow));
+    }
+  }
+}

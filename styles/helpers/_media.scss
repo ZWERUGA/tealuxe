@@ -1,16 +1,18 @@
 @use "./functions" as *;
 
-$laptop-above: 1000px;
-$laptop: 999px;
+$desktop: 1200px;
 
-$tablet-above: 768px;
-$tablet: 767px;
+$laptop-above: 1001px;
+$laptop: 1000px;
 
-$mobile-above: 480px;
-$mobile: 479px;
+$tablet-above: 761px;
+$tablet: 768px;
 
-$mobile-s-above: 360px;
-$mobile-s: 359px;
+$mobile-above: 481px;
+$mobile: 480px;
+
+$mobile-s-above: 361px;
+$mobile-s: 360px;
 
 @mixin laptop-above {
   @media (min-width: $laptop-above) {
