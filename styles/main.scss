@@ -16,8 +16,10 @@
 @use "./blocks/blog";
 @use "./blocks/blog-card";
 @use "./blocks/button";
+@use "./blocks/form";
+@use "./blocks/contact-us";
 
-// header,
-// main > *:not(:last-child) {
-//   display: none !important;
-// }
+header,
+main > *:not(:last-child) {
+  display: none !important;
+}

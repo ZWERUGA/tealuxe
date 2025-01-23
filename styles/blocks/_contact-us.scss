@@ -1,0 +1,67 @@
+@use "../helpers" as *;
+
+.contact-us {
+  background-color: var(--color-bg-light);
+
+  @include mobile-above {
+    background-image: url("../../images/contact-us/bg.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+
+  &__inner {
+    padding-block: fluid(100, 60, 1200, 999);
+    padding-inline: rem(10);
+    display: grid;
+    row-gap: rem(30);
+
+    @include mobile-above {
+      row-gap: fluid(60, 30, 767, 479);
+    }
+
+    @include tablet {
+      padding-block: fluid(60, 50, 767, 479);
+    }
+  }
+
+  &__title {
+    @include desktop-above {
+      text-align: left;
+    }
+  }
+
+  &__body {
+    display: grid;
+    row-gap: rem(30);
+
+    @include mobile-above {
+      row-gap: fluid(60, 30, 767, 479);
+    }
+
+    @include desktop-above {
+      grid-template-columns: rem(580) auto;
+      column-gap: rem(40);
+    }
+  }
+
+  &__description {
+    margin-inline: auto;
+    max-width: rem(580);
+    font-size: rem(14);
+    font-weight: 300;
+    text-align: center;
+
+    @include mobile-above {
+      max-width: fluid(640, 580, 767, 479);
+      font-size: fluid(20, 14, 767, 479);
+    }
+
+    @include tablet-above {
+      max-width: fluid(780, 640, 999, 767);
+    }
+
+    @include desktop-above {
+      text-align: left;
+    }
+  }
+}
