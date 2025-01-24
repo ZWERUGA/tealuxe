@@ -1,0 +1,174 @@
+@use "../helpers" as *;
+
+.footer {
+  padding-top: rem(50);
+  padding-bottom: rem(10);
+  background-color: var(--color-bg-light);
+
+  @include laptop-above {
+    padding-bottom: rem(18);
+  }
+
+  @include tablet-above {
+    padding-top: fluid(100, 50, 999, 767);
+  }
+
+  &__inner {
+    display: grid;
+    row-gap: rem(100);
+
+    padding-inline: rem(10);
+
+    @include tablet-above {
+      padding-inline: rem(20);
+    }
+
+    @include tablet {
+      padding-inline: fluid(64, 10, 767, 479);
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+
+    &--right {
+      display: flex;
+      column-gap: rem(41);
+    }
+  }
+
+  &__navigation {
+    max-width: rem(465);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @include laptop {
+      max-width: rem(312);
+    }
+
+    &-list-title {
+      margin-bottom: rem(50);
+    }
+
+    &-list {
+      display: grid;
+      row-gap: rem(20);
+      font-size: rem(16);
+      font-weight: 300;
+    }
+
+    &-link {
+      position: relative;
+
+      &::before {
+        @include abs-center;
+        height: rem(35);
+        width: 100%;
+
+        content: "";
+      }
+    }
+  }
+
+  &__quote {
+    padding-top: rem(79);
+    max-width: rem(269);
+
+    &-text {
+      font-size: rem(16);
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    &-footer {
+      margin-top: rem(20);
+      display: flex;
+      flex-direction: column;
+      font-size: rem(14);
+      font-weight: 300;
+    }
+
+    &-name,
+    &-company {
+      font-style: normal;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    max-width: rem(270);
+
+    &-title {
+      margin-bottom: rem(50);
+    }
+
+    &-description {
+      font-size: rem(13);
+      font-weight: 300;
+    }
+
+    &-body {
+      margin-top: rem(20);
+      display: grid;
+      grid-template-columns: rem(57) auto;
+      align-items: center;
+      column-gap: rem(40);
+    }
+
+    &-logo {
+      align-self: center;
+    }
+
+    &-address {
+      display: grid;
+      align-items: center;
+      row-gap: rem(20);
+    }
+
+    &-tel,
+    &-email {
+      position: relative;
+      display: flex;
+      align-items: center;
+      column-gap: rem(10);
+
+      &::before {
+        position: absolute;
+
+        content: "";
+        @include flex-center;
+
+        height: rem(25);
+        width: 100%;
+      }
+    }
+
+    &-soc1als {
+      margin-top: rem(50);
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      column-gap: rem(20);
+    }
+  }
+
+  &__extra {
+    display: flex;
+    justify-content: space-between;
+    max-width: rem(480);
+  }
+
+  &__copyright {
+    font-size: rem(16);
+    font-weight: 300;
+  }
+
+  &__payments {
+    display: flex;
+    align-items: center;
+    column-gap: rem(20);
+  }
+}

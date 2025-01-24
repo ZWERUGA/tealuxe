@@ -8,4 +8,14 @@
   @include mobile {
     font-size: fluid(40, 24, 479, 359);
   }
+
+  &--small {
+    font-size: rem(24);
+    text-align: left;
+    font-family: var(--font-family-accent);
+
+    @include mobile {
+      font-size: rem(24);
+    }
+  }
 }
