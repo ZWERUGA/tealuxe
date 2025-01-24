@@ -1,0 +1,37 @@
+@use "../helpers" as *;
+
+.advantages-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: rem(30);
+    font-family: var(--font-family-base);
+    font-weight: 300;
+
+    @include mobile {
+      font-size: fluid(30, 20, 479, 359);
+    }
+  }
+
+  &__subtitle {
+    margin-top: fluid(10, 5, 479, 359);
+    font-size: rem(20);
+    font-family: var(--font-family-base);
+    font-weight: 600;
+
+    @include mobile {
+      font-size: fluid(20, 10, 479, 359);
+    }
+
+    @include mobile-s {
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+
+  &__img {
+    margin-top: fluid(40, 20, 479, 359);
+  }
+}

@@ -18,6 +18,8 @@
 @use "./blocks/button";
 @use "./blocks/form";
 @use "./blocks/contact-us";
+@use "./blocks/advantages-card";
+@use "./blocks/advantages";
 
 header,
 main > *:not(:last-child) {

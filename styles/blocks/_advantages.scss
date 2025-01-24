@@ -1,0 +1,28 @@
+@use "../helpers" as *;
+
+.advantages {
+  padding-block: fluid(150, 120, 1200, 999);
+
+  @include tablet {
+    padding-block: fluid(120, 60, 767, 479);
+  }
+
+  @include mobile {
+    padding-block: fluid(60, 50, 479, 359);
+  }
+
+  &__list {
+    margin-top: rem(30);
+    display: grid;
+    row-gap: rem(30);
+
+    @include tablet-above {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop-above {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
