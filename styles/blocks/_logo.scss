@@ -19,5 +19,12 @@
       width: fluid(73, 39, 767, 479);
       height: fluid(105, 56, 767, 479);
     }
+
+    &--footer {
+      @include tablet {
+        width: rem(57);
+        height: rem(91);
+      }
+    }
   }
 }

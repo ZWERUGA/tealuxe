@@ -6,6 +6,9 @@ $desktop: 1200px;
 $laptop-above: 1001px;
 $laptop: 1000px;
 
+$laptop-s-above: 866px;
+$laptop-s: 865px;
+
 $tablet-above: 769px;
 $tablet: 768px;
 
@@ -35,6 +38,18 @@ $mobile-s: 360px;
 
 @mixin laptop {
   @media (max-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin laptop-s-above {
+  @media (min-width: $laptop-s-above) {
+    @content;
+  }
+}
+
+@mixin laptop-s {
+  @media (max-width: $laptop-s) {
     @content;
   }
 }

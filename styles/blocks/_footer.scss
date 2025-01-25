@@ -15,12 +15,23 @@
 
   &__inner {
     display: grid;
-    row-gap: rem(100);
-
+    row-gap: rem(50);
     padding-inline: rem(10);
 
     @include tablet-above {
       padding-inline: rem(20);
+    }
+
+    @include mobile-above {
+      row-gap: rem(70);
+    }
+
+    @include tablet-above {
+      row-gap: rem(55);
+    }
+
+    @include laptop-above {
+      row-gap: rem(100);
     }
 
     @include tablet {
@@ -31,25 +42,51 @@
   &__body {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+
+    @include tablet-above {
+      flex-direction: row;
+    }
+
+    &--left {
+      max-width: rem(325);
+
+      @include mobile-s-above {
+        max-width: rem(385);
+      }
+
+      @include tablet-above {
+        max-width: rem(312);
+      }
+
+      @include tablet-above {
+        max-width: fluid(465, 312, 1200, 999);
+      }
+    }
 
     &--right {
-      display: flex;
-      column-gap: rem(41);
+      display: grid;
+
+      @include tablet-above {
+        max-width: fluid(580, 270, 999, 767);
+      }
+
+      @include laptop-above {
+        display: flex;
+        justify-content: space-between;
+        column-gap: rem(40);
+        max-width: rem(580);
+      }
     }
   }
 
   &__navigation {
-    max-width: rem(465);
     width: 100%;
     display: flex;
     justify-content: space-between;
 
-    @include laptop {
-      max-width: rem(312);
-    }
-
     &-list-title {
-      margin-bottom: rem(50);
+      margin-bottom: rem(30);
     }
 
     &-list {
@@ -73,8 +110,19 @@
   }
 
   &__quote {
-    padding-top: rem(79);
-    max-width: rem(269);
+    margin-top: rem(40);
+
+    @include tablet-above {
+      margin-top: 0;
+    }
+
+    @include laptop-above {
+      max-width: rem(270);
+    }
+
+    @include desktop-above {
+      margin-top: rem(79);
+    }
 
     &-text {
       font-size: rem(16);
@@ -83,11 +131,19 @@
     }
 
     &-footer {
-      margin-top: rem(20);
+      margin-top: rem(10);
       display: flex;
-      flex-direction: column;
+      column-gap: rem(5);
       font-size: rem(14);
       font-weight: 300;
+
+      @include tablet-above {
+        margin-top: rem(20);
+      }
+
+      @include mobile-above {
+        flex-direction: column;
+      }
     }
 
     &-name,
@@ -97,35 +153,96 @@
   }
 
   &__info {
+    margin-top: fluid(50, 40, 479, 359);
     display: flex;
     flex-direction: column;
-    max-width: rem(270);
+
+    @include laptop-above {
+      margin-top: 0;
+    }
 
     &-title {
-      margin-bottom: rem(50);
+      text-align: center;
+      margin-bottom: fluid(20, 10, 479, 359);
+
+      @include tablet-above {
+        margin-bottom: rem(50);
+        text-align: left;
+      }
     }
 
     &-description {
+      text-align: center;
       font-size: rem(13);
       font-weight: 300;
+
+      @include tablet-above {
+        text-align: left;
+      }
     }
 
     &-body {
-      margin-top: rem(20);
-      display: grid;
-      grid-template-columns: rem(57) auto;
-      align-items: center;
-      column-gap: rem(40);
+      &-inner {
+        margin-top: fluid(20, 10, 479, 359);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: rem(40);
+
+        @include mobile-s-above {
+          flex-direction: row;
+          flex-wrap: wrap;
+          column-gap: rem(29);
+        }
+
+        @include tablet-above {
+          row-gap: rem(20);
+          align-items: end;
+        }
+
+        @include tablet-above {
+          max-width: 100%;
+          flex-direction: column;
+          justify-content: start;
+        }
+      }
+
+      &-contacts {
+        display: flex;
+        align-items: center;
+        column-gap: rem(27);
+
+        @include mobile-above {
+          column-gap: rem(43);
+        }
+
+        @include tablet-above {
+          margin-right: rem(37);
+        }
+      }
+
+      &-soc1als {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: rem(20);
+
+        @include tablet-above {
+          margin-right: rem(23);
+        }
+      }
     }
 
     &-logo {
+      margin: 0;
       align-self: center;
     }
 
     &-address {
       display: grid;
       align-items: center;
-      row-gap: rem(20);
+      row-gap: rem(10);
     }
 
     &-tel,
@@ -134,6 +251,8 @@
       display: flex;
       align-items: center;
       column-gap: rem(10);
+      font-size: rem(14);
+      font-weight: 300;
 
       &::before {
         position: absolute;
@@ -145,20 +264,16 @@
         width: 100%;
       }
     }
-
-    &-soc1als {
-      margin-top: rem(50);
-      display: flex;
-      align-items: center;
-      justify-content: end;
-      column-gap: rem(20);
-    }
   }
 
   &__extra {
     display: flex;
     justify-content: space-between;
-    max-width: rem(480);
+
+    @include tablet-above {
+      justify-content: unset;
+      column-gap: fluid(208, 55, 1200, 999);
+    }
   }
 
   &__copyright {
