@@ -21,8 +21,5 @@
 @use "./blocks/advantages-card";
 @use "./blocks/advantages";
 @use "./blocks/footer";
-
-header,
-main {
-  display: none !important;
-}
+@use "./blocks/overlay";
+@use "./blocks/mobile-menu";

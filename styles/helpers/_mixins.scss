@@ -6,12 +6,10 @@
 }
 
 @mixin hide {
-  overflow: 0;
   visibility: hidden;
 }
 
 @mixin show {
-  overflow: 1;
   visibility: visible;
 }
 

@@ -1,15 +1,33 @@
 @use "../helpers" as *;
 
 .burger-button {
+  --backgroundColorLine: var(--color-dark);
+
+  position: relative;
   width: rem(40);
   height: rem(18);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-shrink: 0;
+  cursor: pointer;
+
+  @include hover {
+    --backgroundColorLine: var(--color-green-light);
+  }
+
+  &::before {
+    @include abs-center;
+
+    content: "";
+    position: absolute;
+    width: rem(60);
+    height: rem(40);
+  }
 
   &__line {
     height: rem(2);
-    background-color: var(--color-dark);
+    background-color: var(--backgroundColorLine);
+    transition: background-color var(--transition-duration) linear;
   }
 }
