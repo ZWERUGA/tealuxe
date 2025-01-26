@@ -1,27 +1,25 @@
 @use "../helpers" as *;
 
 .mobile-menu {
+  position: relative;
   margin-inline: auto;
   max-width: fluid(650, 360, 768, 360);
   width: 100%;
   background-color: var(--color-light);
-  transition: var(--transition-duration) all;
+  transition: 0.4s all;
   transform: translateY(-100%);
   opacity: 0;
 
-  &__close {
+  &--active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &__close-button {
     position: absolute;
     top: 0;
     right: 0;
-    padding: rem(20);
     display: flex;
-    color: var(--color-brown);
-    cursor: pointer;
-    transition: color var(--transition-duration) linear;
-
-    @include hover {
-      color: var(--color-green-light);
-    }
   }
 
   &__list {

@@ -1,0 +1,23 @@
+@use "../helpers" as *;
+
+.close-button {
+  @include reset-button;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--color-brown);
+  transition: color var(--transition-duration) linear;
+  padding: rem(20);
+
+  @include hover {
+    color: var(--color-green-light);
+  }
+
+  &::before {
+    @include abs-center;
+    @include square(rem(40));
+
+    content: '';
+  }
+}

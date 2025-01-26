@@ -13,4 +13,25 @@
     color: var(--color-light);
     background-color: var(--color-green-light);
   }
+
+  span {
+    display: block;
+  }
+
+  svg {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    fill: var(--color-green-light);
+  }
+
+  &--loading {
+    span {
+      display: none;
+    }
+
+    svg {
+      display: flex;
+    }
+  }
 }
